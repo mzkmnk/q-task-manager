@@ -59,8 +59,8 @@ create_project() {
         fi
     fi
     
-    # 元のリポジトリがGitリポジトリかチェック
-    if [[ ! -d "$source_repo_path/.git" ]]; then
+    # 元のリポジトリがGitリポジトリかチェック（.gitディレクトリまたは.gitファイル）
+    if [[ ! -d "$source_repo_path/.git" && ! -f "$source_repo_path/.git" ]]; then
         print_error "指定されたパスはGitリポジトリではありません: $source_repo_path"
         cleanup_script 1
     fi
