@@ -1,0 +1,31 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "source_repo_path": "{{SOURCE_REPO_PATH}}",
+  "parent_branch": "{{PARENT_BRUNCH}}",
+  "created_at": "{{CREATED_AT}}",
+  "description": "{{DESCRIPTION}}",
+  "status": "created",
+  "workers": {
+    "worker1": {
+      "status": "ready",
+      "worktree": "./worktree/worker1",
+      "branch": "{{PROJECT_NAME}}-worker1",
+      "created_at": null,
+      "completed_at": null
+    },
+    "worker2": {
+      "status": "ready", 
+      "worktree": "./worktree/worker2",
+      "branch": "{{PROJECT_NAME}}-worker2",
+      "created_at": null,
+      "completed_at": null
+    },
+    "worker3": {
+      "status": "ready",
+      "worktree": "./worktree/worker3", 
+      "branch": "{{PROJECT_NAME}}-worker3",
+      "created_at": null,
+      "completed_at": null
+    }
+  }
+}
