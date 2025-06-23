@@ -89,7 +89,7 @@ create_worktree() {
     print_info "元のリポジトリ: $source_repo_path"
     print_info "親ブランチ: $parent_branch"
     
-    local worker_dir="$project_dir/worktree/$worker_id"
+    local worker_dir="$project_dir/worktree/${project_name}-${worker_id}"
     local branch_name="${project_name}-${worker_id}"
     
     print_info "Worker '$worker_id' のGit worktree環境を構築しています..."

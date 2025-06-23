@@ -31,10 +31,10 @@ usage() {
 
 # プロジェクト環境作成
 create_project() {
-    local project_name="$1"
+    local base_project_name="$1"
     local source_repo_path="$2"
     
-    if [[ -z "$project_name" ]]; then
+    if [[ -z "$base_project_name" ]]; then
         print_error "プロジェクト名が指定されていません"
         usage
         cleanup_script 1
@@ -45,6 +45,12 @@ create_project() {
         usage
         cleanup_script 1
     fi
+    
+    # タイムスタンプ付きプロジェクト名を生成
+    local timestamp=$(date +"%Y%m%d%H%M%S")
+    local project_name="${base_project_name}-${timestamp}"
+    
+    print_info "生成されたプロジェクト名: $project_name"
     
     # 元のリポジトリパスを絶対パスに変換
     if [[ "$source_repo_path" = /* ]]; then
