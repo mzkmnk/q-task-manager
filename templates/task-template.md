@@ -26,8 +26,8 @@ ${TASK_DESCRIPTION}
 #### 📁 作成・修正対象ファイル
 ${TARGET_FILES}
 
-#### 📝 実装手順
-${IMPLEMENTATION_STEPS}
+#### 📝 実装タスク分割
+${TASK_BREAKDOWN}
 
 #### ⚠️ 考慮事項
 - **DRY原則への準拠**: ${DRY_COMPLIANCE}

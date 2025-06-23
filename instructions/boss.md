@@ -52,7 +52,7 @@
 - `${REQUIREMENTS_ANALYSIS}`: あなたが理解した要件
 - `${TASK_DESCRIPTION}`: 解決すべき課題
 - `${TARGET_FILES}`: 作成・修正対象ファイル一覧
-- `${IMPLEMENTATION_STEPS}`: 実装手順
+- `${TASK_BREAKDOWN}`: 実装タスク分割（チェックボックス形式）
 - `${DRY_COMPLIANCE}`: DRY原則への準拠方法
 - `${CODE_CONSISTENCY}`: 既存コードとの整合性
 - `${ERROR_HANDLING}`: エラーハンドリング方針
@@ -152,7 +152,7 @@ USER_REQUEST="ユーザーの原文リクエスト"
 REQUIREMENTS_ANALYSIS="Bossが分析した要件"
 TASK_DESCRIPTION="解決すべき課題"
 TARGET_FILES="- src/auth.js\n- config/auth.json\n- docs/auth-guide.md"
-IMPLEMENTATION_STEPS="1. 認証モジュール作成\n2. 設定ファイル作成\n3. ドキュメント作成"
+TASK_BREAKDOWN="- [ ] 認証システム実装\n    - [ ] 認証モジュール作成 (src/auth.js)\n        - [ ] ログイン機能\n        - [ ] ログアウト機能\n        - [ ] トークン検証\n    - [ ] 設定ファイル作成 (config/auth.json)\n        - [ ] 認証設定\n        - [ ] セキュリティ設定\n- [ ] ドキュメント作成\n    - [ ] API仕様書 (docs/auth-guide.md)\n    - [ ] 使用方法説明"
 DRY_COMPLIANCE="共通認証ロジックをauth-utils.jsに集約"
 CODE_CONSISTENCY="既存のAPI設計パターンに準拠"
 ERROR_HANDLING="統一されたエラーレスポンス形式を使用"
@@ -322,8 +322,30 @@ tmux capture-pane -t [セッション名].[ペイン番号] -p
 - DRY原則違反の可能性を事前に特定
 
 ### 実装計画の具体化
-- ファイル単位での作業内容を明記
-- 既存コードとの依存関係を整理
+- **階層的タスク分割**: チェックボックス形式で実装タスクを構造化
+- **ファイル単位での作業内容**: 各ファイルの作成・修正内容を明記
+- **サブタスクの詳細化**: 大きなタスクを実行可能な小さなタスクに分割
+- **依存関係の明確化**: タスク間の依存関係を階層で表現
+- **進捗管理**: チェックボックスで進捗を可視化
+
+#### タスク分割の例
+```markdown
+- [ ] メイン機能実装
+    - [ ] コアロジック作成 (src/core.js)
+        - [ ] 基本機能実装
+        - [ ] エラーハンドリング追加
+        - [ ] バリデーション機能
+    - [ ] 設定ファイル作成 (config/settings.json)
+        - [ ] デフォルト設定
+        - [ ] 環境別設定
+- [ ] テスト・検証
+    - [ ] 単体テスト作成
+    - [ ] 統合テスト実行
+    - [ ] 動作確認
+- [ ] ドキュメント整備
+    - [ ] README更新
+    - [ ] API仕様書作成
+```
 - エラーハンドリングの方針を統一
 - テスト・検証方法を含める
 
