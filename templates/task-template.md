@@ -60,7 +60,7 @@ ${TASK_BREAKDOWN}
 `${PROJECT_NAME}`
 
 #### あなたの作業ディレクトリ
-`./tasks/${PROJECT_NAME}/worktree/${WORKER_ID}/`
+`./tasks/${PROJECT_NAME}/worktree/${PROJECT_NAME}-${WORKER_ID}/`
 
 ### 🎯 ユーザーの要望（詳細）
 

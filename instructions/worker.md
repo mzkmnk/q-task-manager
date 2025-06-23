@@ -29,10 +29,10 @@ pwd
 # ./create-worktree.sh sample-repos-readme worker1
 
 # 作業ディレクトリに移動
-cd ./tasks/[プロジェクト名]/worktree/[あなたのWorker ID]
+cd ./tasks/[プロジェクト名]/worktree/[プロジェクト名]-[あなたのWorker ID]
 
-# 例: worker1の場合
-# cd ./tasks/sample-repos-readme/worktree/worker1
+# 例: worker1の場合（プロジェクト名がsample-repos-readme-20250623120000の場合）
+# cd ./tasks/sample-repos-readme-20250623120000/worktree/sample-repos-readme-20250623120000-worker1
 ```
 
 **create-worktree.shが実行すること**:
@@ -45,8 +45,8 @@ cd ./tasks/[プロジェクト名]/worktree/[あなたのWorker ID]
 ### Step 4: 作業環境の確認
 
 以下を確認してください：
-- 現在のディレクトリが `./tasks/[プロジェクト名]/worktree/[Worker ID]` であること
-- Git ブランチが `[プロジェクト名]-[Worker ID]` であること（例: `sample-repos-readme-worker1`）
+- 現在のディレクトリが `./tasks/[プロジェクト名]/worktree/[プロジェクト名]-[Worker ID]` であること
+- Git ブランチが `[プロジェクト名]-[Worker ID]` であること（例: `sample-repos-readme-20250623120000-worker1`）
 - 独立したGit worktree環境であること
 
 ```bash
@@ -63,7 +63,7 @@ git log --oneline -3
 # worktree一覧を確認（ルートディレクトリで実行）
 cd ../../..
 git worktree list
-cd ./tasks/[プロジェクト名]/worktree/[あなたのWorker ID]
+cd ./tasks/[プロジェクト名]/worktree/[プロジェクト名]-[あなたのWorker ID]
 ```
 
 ### Step 5: タスクファイルの確認
@@ -124,7 +124,7 @@ cd /Users/mzkmnk/dev/q-task-manager
 ./create-worktree.sh [プロジェクト名] [Worker ID]
 
 # 作業ディレクトリに移動
-cd ./tasks/[プロジェクト名]/worktree/[Worker ID]
+cd ./tasks/[プロジェクト名]/worktree/[プロジェクト名]-[Worker ID]
 ```
 
 #### 問題: 親ブランチ情報が取得できない
@@ -153,7 +153,7 @@ cat ../task.md
 ./create-worktree.sh user-auth-system worker1
 
 # 2. 作業ディレクトリに移動
-cd ./tasks/user-auth-system/worktree/worker1
+cd ./tasks/user-auth-system-20250623120000/worktree/user-auth-system-20250623120000-worker1
 
 # 3. 環境確認
 pwd

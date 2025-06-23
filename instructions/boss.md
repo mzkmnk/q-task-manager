@@ -32,14 +32,19 @@
 #### 1-2. プロジェクト環境構築
 ```bash
 # プロジェクト環境作成（必須）
-./setup-project.sh create [プロジェクト名] [元のリポジトリパス]
+./setup-project.sh create [ベースプロジェクト名] [元のリポジトリパス]
 
 # 例:
 ./setup-project.sh create sample-repos-readme /Users/mzkmnk/dev/sample-repos
 
+# 注意: プロジェクト名は自動的にタイムスタンプが付加されます
+# 例: sample-repos-readme → sample-repos-readme-20250623120000
+
 # 確認
-./setup-project.sh status [プロジェクト名]
+./setup-project.sh status [生成されたプロジェクト名]
 ```
+
+**重要**: プロジェクト名には自動的にタイムスタンプ（YYYYMMDDHHMMSS）が付加され、同じベース名でも重複を避けることができます。
 
 #### 1-3. 実装計画書作成（task.md）
 `./tasks/${プロジェクト名}/task.md`を作成し、以下の内容を記載：
